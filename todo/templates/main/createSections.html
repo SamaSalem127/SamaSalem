@@ -1,0 +1,22 @@
+{% extends "main/base.html" %}
+
+{% block title %}
+    Create Section
+{% endblock %}
+
+{% block content %}
+<div class="container my-5 p-4 bg-light rounded shadow-sm">
+    <h3 class="text-center mb-4">Create New Section</h3>
+    <form method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            {{ form.as_p }}
+        </div>
+        <div class="d-flex justify-content-between">
+            <button type="submit" class="btn btn-success">Create Subject</button>
+            <a href="{% url 'home' %}" class="btn btn-secondary">Back</a>
+        </div>
+    </form>
+</div>
+{% endblock %}
+
